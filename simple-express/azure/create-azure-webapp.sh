@@ -36,3 +36,5 @@ git remote add azure $GIT_URL
 
 #Push master branch to the "azure" remote
 git push -u azure master
+
+PAT: 3qt5aoj3d2blsyawrh7iw3kchrszvn2ig4mdbaqnpjs3vf7zeoza
