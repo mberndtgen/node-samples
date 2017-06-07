@@ -13,6 +13,8 @@ LOCATION=westeurope
 APP_SERVICE_PLAN=pvandorp-node-plan #Fill in your own name
 APP_SERVICE_PLAN_SKU=S1 
 WEB_APP_NAME=pvandorp-node-web #Fill in your own name
+DEPLOYMENT_USER=<username>
+DEPLOYMENT_PASSWORD=<password>
 
 #Create a resource group
 az group create -n $RESOURCE_GROUP -l $LOCATION
@@ -22,6 +24,9 @@ az appservice plan create -g $RESOURCE_GROUP -n $APP_SERVICE_PLAN --sku $APP_SER
 
 #Create app service web app
 az webapp create -g $RESOURCE_GROUP -p $APP_SERVICE_PLAN -n $WEB_APP_NAME --runtime "node|6.2"
+
+#Set the deployment credentials
+az webapp deployment user set --user-name $DEPLOYMENT_USER --password $DEPLOYMENT_PASSWORD
 
 #Configure a local Git repo and get the URL to the repo
 GIT_URL=$(az webapp deployment source config-local-git -g $RESOURCE_GROUP -n $WEB_APP_NAME --query url --output tsv)
