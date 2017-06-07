@@ -32,9 +32,14 @@ az webapp deployment user set --user-name $DEPLOYMENT_USER --password $DEPLOYMEN
 GIT_URL=$(az webapp deployment source config-local-git -g $RESOURCE_GROUP -n $WEB_APP_NAME --query url --output tsv)
 
 
+#Install Express Generator (https://expressjs.com/en/starter/generator.html)
+npm install -g express-generator
 
+#Generate a simple Express Web Application
 express --pug --view pug --css less --git ../$WEB_APP_NAME
 cd ../$WEB_APP_NAME
+
+#Do the Git routine
 git init
 git add .
 git commit -m "initial commit"
