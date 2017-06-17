@@ -1,3 +1,4 @@
+#!/bin/bash
 #Install Azure CLI 2.0 according to https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
 #Activate your Azure pass according to https://www.microsoftazurepass.com/Home/HowTo
@@ -8,11 +9,11 @@
 az login
 
 #Define your names and other attributes
-RESOURCE_GROUP=pvandorp-node-demo #Fill in your own name
+RESOURCE_GROUP=pvandorp-node-meetup #Fill in your own name
 LOCATION=westeurope
-APP_SERVICE_PLAN=pvandorp-node-demo-plan #Fill in your own name
+APP_SERVICE_PLAN=node-meetup-plan #Fill in your own name
 APP_SERVICE_PLAN_SKU=S1 
-WEB_APP_NAME=pvandorp-node-webapp #Fill in your own name
+WEB_APP_NAME=pvandorp-node-meetup-web #Fill in your own name
 DEPLOYMENT_USER=pvandorp-demo1
 DEPLOYMENT_PASSWORD=Welk@m1234
 
