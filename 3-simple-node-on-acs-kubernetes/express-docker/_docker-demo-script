@@ -1,0 +1,17 @@
+1. CTRL+SHIFT+P => Docker: Add Dockerfiles to workspace
+
+2. Terminal: (<commit hash> =) git describe --always --dirty
+
+3. CTRL+SHIFT+P => Docker: Build Image => pvandorp/docker-express:<commit hash>
+
+4. CTRL+SHIFT+P => Docker: Run => pvandorp/docker-express:<commit hash>
+
+5. Browse to http://localhost:3000
+
+6. Terminal => docker ps => copy <container id>
+
+7. Terminal => docker rm -f <container id>
+
+8. CTRL+SHIFT+P => Docker: Push => pvandorp/docker-express:<commit hash>
+
+9. Show docker hub

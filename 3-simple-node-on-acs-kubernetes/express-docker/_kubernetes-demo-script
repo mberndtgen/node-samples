@@ -1,0 +1,19 @@
+1. Kubernetes: Run
+
+2. Terminal: kubectl proxy => browse to http://localhost:8001/ui
+
+3. Kubernetes: Load => deployments/express-docker
+
+4. JSON: Remove ResourceVersion
+
+5. JSON: Change replicas: 3
+
+6. Terminal: kubectl apply -f deployments-express-docker.json
+
+7. Browse to http://localhost:8001/ui
+
+8. Terminal: kubectl expose deployments/express-docker --port=80 --target-port=3000 --type=LoadBalancer
+
+9. kubectl get svc -w => wait for <external-ip>
+
+10. Browse to <external-ip>
