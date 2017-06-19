@@ -1,4 +1,5 @@
 # End-to-end DevOps for Node.js on Azure
+The script provides all the steps required to instantiate an end-to-end DevOps infrastructure.
 
 ## Prerequisites
 
