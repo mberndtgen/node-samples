@@ -9,13 +9,13 @@
 az login
 
 #Define your names and other attributes
-RESOURCE_GROUP=pvandorp-node-meetup #Fill in your own name
-LOCATION=westeurope
-APP_SERVICE_PLAN=node-meetup-plan #Fill in your own name
+RESOURCE_GROUP=<resource group name> #Fill in your own name
+LOCATION=westeurope #Azure DC Amsterdam
+APP_SERVICE_PLAN=<app service plan name> #Fill in your own name
 APP_SERVICE_PLAN_SKU=S1 
-WEB_APP_NAME=pvandorp-node-meetup-web #Fill in your own name
-DEPLOYMENT_USER=pvandorp-demo1
-DEPLOYMENT_PASSWORD=Welk@m1234
+WEB_APP_NAME=<webapp name> #Fill in your own name
+DEPLOYMENT_USER=<username>
+DEPLOYMENT_PASSWORD=<password>
 
 #Create a resource group
 az group create -n $RESOURCE_GROUP -l $LOCATION
@@ -24,7 +24,7 @@ az group create -n $RESOURCE_GROUP -l $LOCATION
 az appservice plan create -g $RESOURCE_GROUP -n $APP_SERVICE_PLAN --sku $APP_SERVICE_PLAN_SKU
 
 #Create app service web app
-az webapp create -g $RESOURCE_GROUP -p $APP_SERVICE_PLAN -n $WEB_APP_NAME --runtime "node|6.2"
+az webapp create -g $RESOURCE_GROUP -p $APP_SERVICE_PLAN -n $WEB_APP_NAME --runtime "node|6.10.0"
 
 #Set the deployment credentials
 az webapp deployment user set --user-name $DEPLOYMENT_USER --password $DEPLOYMENT_PASSWORD
