@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #Install Azure CLI 2.0 according to https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
 #Activate your Azure pass according to https://www.microsoftazurepass.com/Home/HowTo
@@ -9,13 +10,13 @@
 az login
 
 #Define your names and other attributes
-RESOURCE_GROUP=<resource group name> #Fill in your own name
+RESOURCE_GROUP=rg_mb_nodetest1 #Fill in your own name
 LOCATION=westeurope #Azure DC Amsterdam
-APP_SERVICE_PLAN=<app service plan name> #Fill in your own name
+APP_SERVICE_PLAN=asp_mb_plantest1 #Fill in your own name
 APP_SERVICE_PLAN_SKU=S1 
-WEB_APP_NAME=<webapp name> #Fill in your own name
-DEPLOYMENT_USER=<username>
-DEPLOYMENT_PASSWORD=<password>
+WEB_APP_NAME=web_mb_test1 #Fill in your own name
+DEPLOYMENT_USER=mbtest1
+DEPLOYMENT_PASSWORD=mbt3st1-u53r
 
 #Create a resource group
 az group create -n $RESOURCE_GROUP -l $LOCATION
